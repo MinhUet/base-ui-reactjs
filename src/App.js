@@ -18,7 +18,7 @@ function App(props) {
         <Route path='/cart' component={CartFeature} />
         <Route path='/count' component={CounterFeature} />
 
-        <Route component={NotFound}></Route>
+        <Route component={NotFound} />
       </Switch>
     </div>
   );
