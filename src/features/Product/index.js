@@ -4,6 +4,7 @@ import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import ProductListPage from './pages/ProductList';
 import ProductReportPage from './pages/ProductReport';
 import NotFound from '../../components/NotFound';
+import ProductDetailPage from './pages/ProductDetail';
 
 ProductFeature.propTypes = {};
 
@@ -13,14 +14,19 @@ function ProductFeature(props) {
   return (
     <div>
       <Switch>
-        <Route path={match.path} component={ProductListPage} exact></Route>
+        <Route path={match.path} component={ProductListPage} exact />
         <Route
-          path={`${match.path}/:productId`}
+          path={`${match.path}/report/:productId`}
           component={ProductReportPage}
           exact
-        ></Route>
+        />
+        <Route
+          path={`${match.path}/detail/:productId`}
+          component={ProductDetailPage}
+          exact
+        />
 
-        <Route component={NotFound}></Route>
+        <Route component={NotFound} />
       </Switch>
     </div>
   );
